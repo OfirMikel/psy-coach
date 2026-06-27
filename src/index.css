@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  /* Greys */
+  --color-grey-light:          #F8F8F8;
+  --color-grey:                #ECECEC;
+  --color-grey-disable:        #A7B2BA;
+  --color-bg-grey:             #F4F4F4;
+
+  /* Blues */
+  --color-blue-dark:           #1C1C1C;
+  --color-blue-light:          #E8E8E8;
+  --color-blue-light-2:        #EFEFEF;
+  --color-blue-bright:         #5585BF;
+
+  /* White */
+  --color-bg-white:            #FEFEFE;
+  --color-white-70:            rgba(254,254,254,0.7);
+
+  /* Texts */
+  --color-text-grey:           #5B6770;
+  --color-text-dark:           #1C1C1C;
+  --color-text-grey-med:       #3A384B;
+
+  /* System */
+  --color-system-green:        #2E8B57;
+  --color-system-yellow:       #CFAD00;
+  --color-system-orange:       #CE5814;
+  --color-system-orange-light: #FEEADF;
+  --color-system-green-light:  #C8F5DC;
+  --color-system-yellow-light: #F7F0D1;
+
+  /* Reds */
+  --color-system-red:          #B31942;
+  --color-system-red-light:    #E0B4C0;
+  --color-system-red-light-10: #FFCEDB;
+
+  /* Stroke */
+  --color-stroke:              #CBD1DB;
+  --color-stroke-light:        #F1F2F6;
+
+  /* Shadows */
+  --shadow-card:  0 2px 8px rgba(0,0,0,0.08);
+  --shadow-card-md: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+
+.card-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
