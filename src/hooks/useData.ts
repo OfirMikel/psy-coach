@@ -18,8 +18,8 @@ export function useData(): DataState {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/mapping.json').then(r => r.json() as Promise<MappingFile>),
-      fetch('/data/heb_mapping.json').then(r => r.json() as Promise<MappingFile>),
+      fetch(`${import.meta.env.BASE_URL}data/mapping.json`).then(r => r.json() as Promise<MappingFile>),
+      fetch(`${import.meta.env.BASE_URL}data/heb_mapping.json`).then(r => r.json() as Promise<MappingFile>),
     ])
       .then(([enData, heData]) => setState({ enData, heData, loading: false, error: null }))
       .catch(err => setState(s => ({ ...s, loading: false, error: String(err) })))
